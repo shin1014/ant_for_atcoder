@@ -5,20 +5,15 @@ template<class T> inline bool chmax(T& a, T b) { if (a < b) { a = b; return 1; }
 template<class T> inline bool chmin(T& a, T b) { if (a > b) { a = b; return 1; } return 0; }
 const long long INF = 1LL << 60;
 
-int N;
+string s;
 
 int main(){
-    cin >> N;
-    vector<int> d(N);
-    rep(i,N) cin >> d[i];
+    cin >> s;   
 
-    sort(d.begin(),d.end(), greater<int>());
-
-    int  m=100*100, count=0;;
-    rep(i,N){
-        if(chmin(m,d[i])) count++;
+    int count=0;
+    rep(i,3){
+        if(s[i]=='1') count++;
     }
 
     cout << count << endl;
-
 }
